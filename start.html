@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Colosseum | Enter Arena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+            background: #08090a;
+            background-image: linear-gradient(rgb(0, 0, 0), rgba(7, 3, 3, 0.896)),url("/bg5.jpg");
+            background-size: cover;
+            background-origin: content-box;
+            background-repeat: no-repeat;
+
+            
+            background-position: center;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .container {
+            text-align: center;
+            border: 4px double #00ff41;
+            padding: 60px;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            color: #ff3131;
+            font-size: 2.5rem;
+            text-shadow: 0 0 15px #ff3131;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #00ff41;
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            margin-bottom: 50px;
+            opacity: 0.8;
+        }
+
+        .enter-btn {
+            background: transparent;
+            color: #00ff41;
+            border: 2px solid #00ff41;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            transition: all 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 20px #00ff41;
+            transform: scale(1.05);
+        }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 255, 65, 0) 0%, rgba(0, 255, 65, 0.1) 50%, rgba(0, 255, 65, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            to { bottom: -100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+        <h1>CODE COLOSSEUM</h1>
+        <p>SYSTEM READY: MULTI-LANGUAGE PROTOCOL ACTIVE</p>
+        <button class="enter-btn" onclick="startArena()">ENTER ARENA</button>
+    </div>
+    <!-- <img src="/Stranger Things Hopper Sticker by LITTLE Agency.gif"> -->
+
+    <script>
+        function startArena() {
+            // Play the start sound
+            const audio = new Audio("https://actions.google.com/sounds/v1/science_fiction/alien_beam.ogg");
+            audio.play();
+
+            // Redirect to the game page after a short delay for the sound
+            setTimeout(() => {
+                window.location.href = "index.html?autostart=true";
+            }, 800);
+        }
+    </script>
+</body>
+</html>

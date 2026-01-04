@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeColosseum Prototype</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+</head>
+<body>
+    
+        <header>
+            <h1>CODE COLOSSEUM</h1>
+            <div id="timer">TIME LEFT: 60s</div>
+            <div class="stats">
+                <span>TEAM: ALGO-WARRIORS</span>
+                <select id="languageSelect" style="background: #000; color: #00ff41; border: 1px solid #00ff41; font-family: 'Fira Code';">
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+                <span id="levelDisplay">LVL: 1</span>
+            </div>
+        </header>
+    
+        <div class="main-layout">
+            
+            <div class="game-container">
+                <div class="arena">
+                    <div class="boss-section">
+                        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWV6c2R4dDF2NDg1ODBsemJhbnF4Y2FnZDJvN21ycmg3eGJucHZzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/xUOxfip5irGQp7OuQM/giphy.gif" alt="Bug Boss" class="boss-img" id="bossImg"/>
+                        
+                        <div class="health-bar-container">
+                            <div class="health-bar" id="bossHealth"></div>
+                        </div>
+                        <p id="bossName">BOSS: MEMORY LEAK MANTIS</p>
+                    </div>
+                </div>
+    
+                <div class="story-box">
+                    <p id="storyText">Searching for an opponent...</p>
+                </div>
+            </div>
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span>PLAYER 1 (YOU)</span>
+                </div>
+                
+                <textarea id="codeArea" placeholder="// Write code to defeat the Mantis..."></textarea>
+                
+                <div id="consoleOut" style="background: black; color: #00ff41; font-family: 'Fira Code', monospace; padding: 10px; height: 100px; overflow-y: auto; font-size: 12px; border-top: 1px solid #333; margin-bottom: 10px;">
+                    > System Initialized... Ready for Input.
+                </div>
+            
+                <button id="attackBtn">CAST SPELL (RUN CODE)</button>
+            </div>
+            
+            <div id="gameOverScreen" class="game-over-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(139, 0, 0, 0.9); z-index: 9999; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; font-family: 'Press Start 2P';">
+                <h2>SYSTEM FAILURE</h2>
+                <p style="margin: 20px;">THE MEMORY LEAK HAS CONSUMED THE CORE</p>
+                <button onclick="location.reload()" style="padding: 15px; cursor: pointer; font-family: 'Press Start 2P';">REBOOT SYSTEM</button>
+            </div>
+            <div id="winScreen" class="win-overlay" style="display: none;">
+                <h2>MISSION ACCOMPLISHED</h2>
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGt1NWVybjR0eGF2bnF4aHk1d3NqcmdueGNyb202dWJvcDg3bWlkaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YX8IKLsJJXagt5rZMV/giphy.gif" alt="Victory" class="victory-img">
+                <p>The Memory Leak has been neutralized!</p>
+                <button id="nextLevelBtn">PROCEED TO NEXT LEVEL</button>
+            </div>
+            <!-- <div class="editor-container">
+                <div class="editor-header">
+                    <span>PLAYER 1 (YOU) - JAVA</span>
+                </div>
+                <textarea id="codeArea" placeholder="// Write your code here to attack..."></textarea>
+                <button id="attackBtn">CAST SPELL (RUN CODE)</button>
+            </div> -->
+    
+        </div> 
+        <script src="config.js"></script>
+<script src="script.js"></script>
+<script type="module" src="script.js"></script>
+    </body>
+
+</html>

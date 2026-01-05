@@ -7,7 +7,7 @@
 ---
 
 ## 🚀 The Solution
-Traditional coding platforms often feel static and intimidating. **Code Colosseum** bridges the gap between learning and engagement by providing:
+Traditional coding platforms often feel static and intimidating. **Code Colosseum** bridges the gap between learning and engagement by providing :
 
 * **Dynamic Storytelling:** No two battles are the same. Every monster, task, and technical constraint is generated on-the-fly by AI.
 * **Instant Feedback:** A specialized terminal provides immediate compiler-style feedback, turning errors into "dodgeable" boss attacks.

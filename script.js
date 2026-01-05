@@ -2,7 +2,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // --- 1. CONFIGURATION & VARIABLES ---
-const API_KEY = CONFIG.GEMINI_KEY;
+const API_KEY = "AIzaSyBEZ9DexknmMyzCY5Ap_lrjjjJ2ffZ3qMg";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // Sounds
